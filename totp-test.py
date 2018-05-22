@@ -6,7 +6,7 @@ print ('Generating OTPAuth QR Code in file otpauth_qr.png (scan it with your app
 
 random_n = pyotp.random_base32()
 totp = pyotp.TOTP(random_n)
-qr = totp.provisioning_uri("gpinero@gmail.com", issuer_name="TEST TOTP Python")
+qr = totp.provisioning_uri("gpinero@testing.com", issuer_name="TEST TOTP Python")
 url = pyqrcode.create(qr)
 big_code = pyqrcode.create(qr, error='L', version=27, mode='binary')
 big_code.png('otpauth_qr.png', scale=6, module_color=[0, 0, 0, 128], background=[0xff, 0xff, 0xcc])
